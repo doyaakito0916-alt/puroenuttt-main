@@ -57,7 +57,7 @@ export function LoginScreen() {
               CYBER<span className="text-neon-pink">_STUDENT</span>
             </h1>
           </div>
-          <p className="text-sm text-muted-foreground font-mono">
+          <p className="text-base text-muted-foreground font-mono">
             サイバーパンク風学生ポートフォリオ
           </p>
         </div>
@@ -68,7 +68,7 @@ export function LoginScreen() {
             <h2 className="text-lg font-bold font-sans tracking-wide mb-2">
               ようこそ、<span className="text-neon-pink">サイバー</span>な世界へ
             </h2>
-            <p className="text-xs text-muted-foreground font-mono">
+            <p className="text-sm text-muted-foreground font-mono">
               Googleアカウントでログインして、あなたのプロフィールを構築
             </p>
           </div>
@@ -79,19 +79,19 @@ export function LoginScreen() {
               <div className="w-10 h-10 mx-auto mb-2 rounded-lg bg-neon-blue/10 border border-neon-blue/30 flex items-center justify-center">
                 <Trophy className="w-5 h-5 text-neon-blue" />
               </div>
-              <p className="text-[10px] font-mono text-muted-foreground">実績管理</p>
+              <p className="text-xs font-mono text-muted-foreground">実績管理</p>
             </div>
             <div className="text-center">
               <div className="w-10 h-10 mx-auto mb-2 rounded-lg bg-neon-pink/10 border border-neon-pink/30 flex items-center justify-center">
                 <Users className="w-5 h-5 text-neon-pink" />
               </div>
-              <p className="text-[10px] font-mono text-muted-foreground">プロフィール</p>
+              <p className="text-xs font-mono text-muted-foreground">プロフィール</p>
             </div>
             <div className="text-center">
               <div className="w-10 h-10 mx-auto mb-2 rounded-lg bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center">
                 <Zap className="w-5 h-5 text-neon-cyan" />
               </div>
-              <p className="text-[10px] font-mono text-muted-foreground">シェア機能</p>
+              <p className="text-xs font-mono text-muted-foreground">シェア機能</p>
             </div>
           </div>
 
@@ -100,7 +100,7 @@ export function LoginScreen() {
             type="button"
             onClick={handleGoogleLogin}
             disabled={loading}
-            className="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-lg border border-neon-blue/50 bg-neon-blue/10 text-neon-blue font-mono text-sm hover:bg-neon-blue/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-lg border border-neon-blue/50 bg-neon-blue/10 text-neon-blue font-mono text-base hover:bg-neon-blue/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? (
               <>
@@ -117,7 +117,7 @@ export function LoginScreen() {
 
           {/* Privacy Note */}
           <div className="mt-6 text-center">
-            <p className="text-[10px] text-muted-foreground font-mono">
+            <p className="text-xs text-muted-foreground font-mono">
               セキュアな認証システム • データは暗号化保存
             </p>
           </div>
@@ -125,7 +125,7 @@ export function LoginScreen() {
 
         {/* Footer */}
         <footer className="mt-8 text-center">
-          <div className="text-[10px] font-mono text-muted-foreground">
+          <div className="text-xs font-mono text-muted-foreground">
             © 2026 CYBER_STUDENT
           </div>
         </footer>

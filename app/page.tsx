@@ -5,7 +5,8 @@ import { useSearchParams } from "next/navigation"
 import { QRCodeSVG } from "qrcode.react"
 import { HexagonRadarChart } from "@/components/hexagon-radar-chart"
 import { AchievementBadge } from "@/components/achievement-badge"
-import { DigitalIdCard, type VisibilityType } from "@/components/digital-id-card"
+import { DigitalIdCard } from "@/components/digital-id-card"
+import type { VisibilityType } from "@/types"
 import { AuthUI } from "@/components/auth-ui"
 import { LoginScreen } from "@/components/login-screen"
 import { ProfileEditModal } from "@/components/profile-edit-modal"
@@ -110,12 +111,12 @@ const achievements = [
 ]
 
 const statIcons = [
-  <Brain key="brain" className="w-4 h-4" />,
-  <Flame key="flame" className="w-4 h-4" />,
-  <Star key="star" className="w-4 h-4" />,
-  <Heart key="heart" className="w-4 h-4" />,
-  <Code key="code" className="w-4 h-4" />,
-  <Shield key="shield" className="w-4 h-4" />,
+  <Brain key="brain" className="w-5 h-5" />,
+  <Flame key="flame" className="w-5 h-5" />,
+  <Star key="star" className="w-5 h-5" />,
+  <Heart key="heart" className="w-5 h-5" />,
+  <Code key="code" className="w-5 h-5" />,
+  <Shield key="shield" className="w-5 h-5" />,
 ]
 
 function StudentPortfolioContent() {
@@ -193,7 +194,7 @@ function StudentPortfolioContent() {
             >
               <X className="w-5 h-5" />
             </button>
-            <p className="text-xs font-mono text-neon-blue uppercase tracking-wider mb-3 text-center">
+            <p className="text-sm font-mono text-neon-blue uppercase tracking-wider mb-3 text-center">
               カメラで読み取ってPROFILEを閲覧
             </p>
             <div className="flex justify-center bg-white p-3 rounded-lg">
@@ -204,7 +205,7 @@ function StudentPortfolioContent() {
                 includeMargin={false}
               />
             </div>
-            <p className="text-[10px] font-mono text-muted-foreground mt-3 text-center">
+            <p className="text-xs font-mono text-muted-foreground mt-3 text-center">
               このQRコードを読み取るとこのPROFILEが開きます
             </p>
           </div>
@@ -263,7 +264,7 @@ function StudentPortfolioContent() {
                       {statIcons[index]}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-xs text-muted-foreground font-mono">{stat.label}</div>
+                      <div className="text-sm text-muted-foreground font-mono">{stat.label}</div>
                       <div className="flex items-center gap-2">
                         <div className="flex-1 h-1.5 bg-muted/30 rounded-full overflow-hidden">
                           <div
@@ -271,7 +272,7 @@ function StudentPortfolioContent() {
                             style={{ width: `${(stat.value / stat.maxValue) * 100}%` }}
                           />
                         </div>
-                        <span className="text-sm font-mono font-bold text-foreground">
+                        <span className="text-base font-mono font-bold text-foreground">
                           {stat.value}
                         </span>
                       </div>
@@ -293,7 +294,7 @@ function StudentPortfolioContent() {
                   className="bg-card/50 border border-border rounded-lg p-4 text-center backdrop-blur-sm"
                 >
                   <div className={`text-2xl font-bold font-mono ${item.color}`}>{item.value}</div>
-                  <div className="text-[10px] text-muted-foreground font-mono mt-1 uppercase">
+                  <div className="text-xs text-muted-foreground font-mono mt-1 uppercase">
                     {item.label}
                   </div>
                 </div>
@@ -319,7 +320,7 @@ function StudentPortfolioContent() {
               <button
                 type="button"
                 onClick={handleShare}
-                className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg border border-neon-blue/50 bg-neon-blue/10 text-neon-blue text-xs font-mono hover:bg-neon-blue/20 transition-colors"
+                className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg border border-neon-blue/50 bg-neon-blue/10 text-neon-blue text-sm font-mono hover:bg-neon-blue/20 transition-colors"
               >
                 <Share2 className="w-4 h-4" />
                 名刺をシェア
@@ -327,7 +328,7 @@ function StudentPortfolioContent() {
               <button
                 type="button"
                 onClick={() => setShowEditModal(true)}
-                className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg border border-neon-pink/50 bg-neon-pink/10 text-neon-pink text-xs font-mono hover:bg-neon-pink/20 transition-colors"
+                className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg border border-neon-pink/50 bg-neon-pink/10 text-neon-pink text-sm font-mono hover:bg-neon-pink/20 transition-colors"
               >
                 <Pencil className="w-4 h-4" />
                 プロフィールを編集
@@ -338,50 +339,50 @@ function StudentPortfolioContent() {
             <section className="bg-card/50 border border-border rounded-xl p-4 backdrop-blur-sm border-dashed border-neon-cyan/30">
               <div className="flex items-center gap-2 mb-2">
                 <Link2 className="w-4 h-4 text-neon-cyan" />
-                <h3 className="text-xs font-mono font-bold text-neon-cyan uppercase tracking-wider">
+                <h3 className="text-sm font-mono font-bold text-neon-cyan uppercase tracking-wider">
                   連携で実績が自動記録
                 </h3>
-                <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-muted/50 text-muted-foreground">
+                <span className="text-xs font-mono px-1.5 py-0.5 rounded bg-muted/50 text-muted-foreground">
                   準備中
                 </span>
               </div>
-              <p className="text-[10px] text-muted-foreground font-mono">
+              <p className="text-xs text-muted-foreground font-mono">
                 GitHub・Notion・学習サービスなどと連携すると、使っているだけでステータスや実績が自動でたまります。入力の手間を減らして継続しやすく。
               </p>
             </section>
 
             {/* 表示範囲 - 連携セクションの下 */}
             <section className="bg-card/50 border border-border rounded-xl p-4 backdrop-blur-sm">
-              <h3 className="text-xs font-mono font-bold text-neon-blue uppercase tracking-wider mb-3">
+              <h3 className="text-sm font-mono font-bold text-neon-blue uppercase tracking-wider mb-3">
                 表示範囲
               </h3>
               <div className="flex gap-2">
                 <button
                   type="button"
                   onClick={() => setVisibility("public")}
-                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg border text-xs font-mono transition-all ${
+                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg border text-sm font-mono transition-all ${
                     visibility === "public"
                       ? "border-neon-blue bg-neon-blue/20 text-neon-blue"
                       : "border-border bg-muted/20 text-muted-foreground hover:border-neon-blue/50"
                   }`}
                 >
-                  <Globe className="w-3.5 h-3.5" />
+                  <Globe className="w-4 h-4" />
                   公開
                 </button>
                 <button
                   type="button"
                   onClick={() => setVisibility("limited")}
-                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg border text-xs font-mono transition-all ${
+                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg border text-sm font-mono transition-all ${
                     visibility === "limited"
                       ? "border-neon-pink bg-neon-pink/20 text-neon-pink"
                       : "border-border bg-muted/20 text-muted-foreground hover:border-neon-pink/50"
                   }`}
                 >
-                  <Lock className="w-3.5 h-3.5" />
+                  <Lock className="w-4 h-4" />
                   限定公開
                 </button>
               </div>
-              <p className="text-[10px] text-muted-foreground font-mono mt-2">
+              <p className="text-xs text-muted-foreground font-mono mt-2">
                 {visibility === "public"
                   ? "許可したユーザーのみが閲覧できます"
                   : "同じコミュニティ（学校・会社）のメンバーのみ閲覧できます"}
@@ -392,13 +393,13 @@ function StudentPortfolioContent() {
           <TabsList className="w-full grid grid-cols-2 bg-muted/20 border border-border rounded-lg p-1 mt-6">
             <TabsTrigger
               value="id"
-              className="font-mono text-xs data-[state=active]:bg-neon-cyan/20 data-[state=active]:text-neon-cyan data-[state=active]:shadow-[0_0_10px_oklch(0.75_0.15_200_/_0.3)]"
+              className="font-mono text-sm data-[state=active]:bg-neon-cyan/20 data-[state=active]:text-neon-cyan data-[state=active]:shadow-[0_0_10px_oklch(0.75_0.15_200_/_0.3)]"
             >
               ID CARD
             </TabsTrigger>
             <TabsTrigger
               value="status"
-              className="font-mono text-xs data-[state=active]:bg-neon-blue/20 data-[state=active]:text-neon-blue data-[state=active]:shadow-[0_0_10px_oklch(0.7_0.2_250_/_0.3)]"
+              className="font-mono text-sm data-[state=active]:bg-neon-blue/20 data-[state=active]:text-neon-blue data-[state=active]:shadow-[0_0_10px_oklch(0.7_0.2_250_/_0.3)]"
             >
               STATUS
             </TabsTrigger>
@@ -407,7 +408,7 @@ function StudentPortfolioContent() {
 
         {/* Footer */}
         <footer className="mt-8 text-center">
-          <div className="text-[10px] font-mono text-muted-foreground">
+          <div className="text-xs font-mono text-muted-foreground">
             © 2026 CYBER_STUDENT
           </div>
         </footer>

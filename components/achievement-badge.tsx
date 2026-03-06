@@ -58,23 +58,23 @@ export function AchievementBadge({
         <div>
           <h3
             className={cn(
-              "font-mono text-sm font-bold uppercase tracking-wide",
+              "font-mono text-base font-bold uppercase tracking-wide",
               unlocked ? styles.text : "text-muted-foreground"
             )}
           >
             {title}
           </h3>
-          <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{description}</p>
+          <p className="text-sm text-muted-foreground mt-1 line-clamp-2">{description}</p>
         </div>
 
         {unlocked && date && (
-          <div className="text-[10px] text-muted-foreground font-mono mt-1">
+          <div className="text-xs text-muted-foreground font-mono mt-1">
             UNLOCKED: {date}
           </div>
         )}
 
         {!unlocked && (
-          <div className="text-[10px] text-muted-foreground font-mono uppercase tracking-widest">
+          <div className="text-xs text-muted-foreground font-mono uppercase tracking-widest">
             [LOCKED]
           </div>
         )}
@@ -82,7 +82,7 @@ export function AchievementBadge({
         {/* Rarity indicator */}
         <div
           className={cn(
-            "absolute -top-1 -right-1 px-2 py-0.5 text-[8px] font-mono uppercase tracking-widest rounded",
+            "absolute -top-1 -right-1 px-2 py-0.5 text-[10px] font-mono uppercase tracking-widest rounded",
             unlocked ? styles.bg : "bg-muted/30",
             unlocked ? styles.text : "text-muted-foreground",
             "border",

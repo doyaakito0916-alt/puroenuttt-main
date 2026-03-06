@@ -112,7 +112,7 @@ export function ProfileEditModal({ isOpen, onClose, profile, myTags, onSave }: P
           {/* 基本情報 */}
           <div className="space-y-4">
             <div>
-              <label className="block text-xs font-mono text-neon-blue uppercase tracking-wider mb-2">
+              <label className="block text-sm font-mono text-neon-blue uppercase tracking-wider mb-2">
                 ユーザー名
               </label>
               <input
@@ -126,7 +126,7 @@ export function ProfileEditModal({ isOpen, onClose, profile, myTags, onSave }: P
             </div>
 
             <div>
-              <label className="block text-xs font-mono text-muted-foreground uppercase tracking-wider mb-2">
+              <label className="block text-sm font-mono text-muted-foreground uppercase tracking-wider mb-2">
                 @ID（変更不可）
               </label>
               <div className="flex">
@@ -145,7 +145,7 @@ export function ProfileEditModal({ isOpen, onClose, profile, myTags, onSave }: P
 
           {/* MY TAG */}
           <div>
-            <label className="block text-xs font-mono text-neon-blue uppercase tracking-wider mb-3">
+            <label className="block text-sm font-mono text-neon-blue uppercase tracking-wider mb-3">
               My Tag
             </label>
 
@@ -165,8 +165,8 @@ export function ProfileEditModal({ isOpen, onClose, profile, myTags, onSave }: P
                   >
                     <div className="flex items-center gap-2">
                       <Trophy className={cn("w-4 h-4", styles.text)} />
-                      <span className={cn("text-sm font-mono", styles.text)}>{tag.name}</span>
-                      <span className={cn("text-[10px] font-mono px-2 py-0.5 rounded border", styles.bg, styles.text, styles.border)}>
+                      <span className={cn("text-base font-mono", styles.text)}>{tag.name}</span>
+                      <span className={cn("text-xs font-mono px-2 py-0.5 rounded border", styles.bg, styles.text, styles.border)}>
                         {tag.rarity.toUpperCase()}
                       </span>
                     </div>

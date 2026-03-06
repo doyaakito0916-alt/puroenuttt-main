@@ -57,15 +57,15 @@ export function AuthUI() {
             className="h-8 w-8 rounded-full border border-border"
           />
         )}
-        <span className="max-w-[140px] truncate text-xs font-mono text-muted-foreground sm:max-w-[200px]">
+        <span className="max-w-[140px] truncate text-sm font-mono text-muted-foreground sm:max-w-[200px]">
           {user.email}
         </span>
         <button
           type="button"
           onClick={handleLogout}
-          className="flex items-center gap-1.5 rounded-lg border border-border/50 bg-muted/20 px-2.5 py-1.5 text-[10px] font-mono text-muted-foreground hover:bg-muted/40"
+          className="flex items-center gap-1.5 rounded-lg border border-border/50 bg-muted/20 px-2.5 py-1.5 text-xs font-mono text-muted-foreground hover:bg-muted/40"
         >
-          <LogOut className="w-3.5 h-3.5" />
+          <LogOut className="w-4 h-4" />
           ログアウト
         </button>
       </div>
@@ -76,7 +76,7 @@ export function AuthUI() {
     <button
       type="button"
       onClick={handleGoogleLogin}
-      className="flex items-center gap-2 rounded-lg border border-neon-blue/50 bg-neon-blue/10 px-3 py-2 text-xs font-mono text-neon-blue hover:bg-neon-blue/20"
+      className="flex items-center gap-2 rounded-lg border border-neon-blue/50 bg-neon-blue/10 px-3 py-2 text-sm font-mono text-neon-blue hover:bg-neon-blue/20"
     >
       <LogIn className="w-4 h-4" />
       Googleでログイン

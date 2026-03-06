@@ -11,12 +11,12 @@ import type { Profile, MyTag } from "@/types"
 import { studentStats } from "@/types"
 
 const statIcons = [
-  <Brain key="brain" className="w-4 h-4" />,
-  <Zap key="zap" className="w-4 h-4" />,
-  <Star key="star" className="w-4 h-4" />,
-  <Heart key="heart" className="w-4 h-4" />,
-  <Code key="code" className="w-4 h-4" />,
-  <Shield key="shield" className="w-4 h-4" />,
+  <Brain key="brain" className="w-5 h-5" />,
+  <Zap key="zap" className="w-5 h-5" />,
+  <Star key="star" className="w-5 h-5" />,
+  <Heart key="heart" className="w-5 h-5" />,
+  <Code key="code" className="w-5 h-5" />,
+  <Shield key="shield" className="w-5 h-5" />,
 ]
 
 function ProfileContent() {
@@ -152,7 +152,7 @@ function ProfileContent() {
                       {statIcons[index]}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-xs text-muted-foreground font-mono">{stat.label}</div>
+                      <div className="text-sm text-muted-foreground font-mono">{stat.label}</div>
                       <div className="flex items-center gap-2">
                         <div className="flex-1 h-1.5 bg-muted/30 rounded-full overflow-hidden">
                           <div
@@ -160,7 +160,7 @@ function ProfileContent() {
                             style={{ width: `${(stat.value / stat.maxValue) * 100}%` }}
                           />
                         </div>
-                        <span className="text-sm font-mono font-bold text-foreground">
+                        <span className="text-base font-mono font-bold text-foreground">
                           {stat.value}
                         </span>
                       </div>
@@ -182,7 +182,7 @@ function ProfileContent() {
                   className="bg-card/50 border border-border rounded-lg p-4 text-center backdrop-blur-sm"
                 >
                   <div className={`text-2xl font-bold font-mono ${item.color}`}>{item.value}</div>
-                  <div className="text-[10px] text-muted-foreground font-mono mt-1 uppercase">
+                  <div className="text-xs text-muted-foreground font-mono mt-1 uppercase">
                     {item.label}
                   </div>
                 </div>
@@ -193,13 +193,13 @@ function ProfileContent() {
           <TabsList className="w-full grid grid-cols-2 bg-muted/20 border border-border rounded-lg p-1 mt-6">
             <TabsTrigger
               value="id"
-              className="font-mono text-xs data-[state=active]:bg-neon-cyan/20 data-[state=active]:text-neon-cyan data-[state=active]:shadow-[0_0_10px_oklch(0.75_0.15_200_/_0.3)]"
+              className="font-mono text-sm data-[state=active]:bg-neon-cyan/20 data-[state=active]:text-neon-cyan data-[state=active]:shadow-[0_0_10px_oklch(0.75_0.15_200_/_0.3)]"
             >
               ID CARD
             </TabsTrigger>
             <TabsTrigger
               value="status"
-              className="font-mono text-xs data-[state=active]:bg-neon-blue/20 data-[state=active]:text-neon-blue data-[state=active]:shadow-[0_0_10px_oklch(0.7_0.2_250_/_0.3)]"
+              className="font-mono text-sm data-[state=active]:bg-neon-blue/20 data-[state=active]:text-neon-blue data-[state=active]:shadow-[0_0_10px_oklch(0.7_0.2_250_/_0.3)]"
             >
               STATUS
             </TabsTrigger>
@@ -208,7 +208,7 @@ function ProfileContent() {
 
         {/* Footer */}
         <footer className="mt-8 text-center">
-          <div className="text-[10px] font-mono text-muted-foreground">
+          <div className="text-xs font-mono text-muted-foreground">
             © 2026 CYBER_STUDENT
           </div>
         </footer>
